@@ -1,0 +1,4 @@
+.peopleList {
+  overflow: scroll;
+  white-space: nowrap;
+}
