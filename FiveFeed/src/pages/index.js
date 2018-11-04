@@ -6,8 +6,8 @@ import FiveList from '../components/five-list'
 import PeopleList from '../components/people-list.1'
 import ModalWrapper from '../components/modal-wrapper'
 
-function getLambda(data, endpoint) {
-  axios.post(process.env.LAMBDA_ENDPOINT + endpoint, {
+function getLambda(data, functionName) {
+  axios.post(process.env.LAMBDA_ENDPOINT + functionName, {
     headers: {
       'Content-Type': 'application/json',
     },
