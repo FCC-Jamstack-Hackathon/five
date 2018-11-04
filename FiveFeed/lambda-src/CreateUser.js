@@ -13,11 +13,10 @@ exports.handler = async function (event, context, callback) {
   const client = new faunadb.Client({ secret: process.env.faunaKey })
   client
     .query(
-      q.Create(q.Class('curator'), {
+      q.Create(q.Class('user'), {
         data: {
           name: data.name,
-          profilePic: data.profilePic,
-          recs: []
+          curators: []
         },
       })
     )
