@@ -52,11 +52,11 @@ export default class IndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        {/* <PeopleList
+        <PeopleList
           onPersonChanged={this.onPersonChanged}
           centerPersonIndex={this.state.centerPersonIndex}
           bringModal={this.bringModal}
-        /> */}
+        />
         <FiveList />
         <ModalWrapper
           isModalOn={this.state.isModalOn}

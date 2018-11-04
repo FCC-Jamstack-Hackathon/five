@@ -624,7 +624,14 @@ pre tt:after {
   padding: 10px 0 20px 0;
 }
 .svg-icon {
-  margin-bottom: 20px;
+  width: 30px;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .svg-icon {
+    width: 45px;
+    margin-bottom: 20px;
+  }
 }
 .login-button {
   position: relative;

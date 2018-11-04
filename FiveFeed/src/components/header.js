@@ -7,10 +7,16 @@ import LoginButton from './login'
 const Container = styled.div`
   margin: 0 auto;
   maxwidth: 960;
-  padding: 2rem 1rem;
+  padding: 1rem 0.5rem;
   display: grid;
   grid-template-columns: 1fr 75% 1fr;
   justify-content: center;
+
+  @media (min-width: 768px) {
+    & {
+      padding: 2rem 1rem;
+    }
+  }
 `
 const Title = styled.h1`
   grid-column-start: 2;

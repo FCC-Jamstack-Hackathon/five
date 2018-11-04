@@ -1,9 +1,6 @@
 import React from 'react'
 import { Transition, animated, config } from 'react-spring'
 
-import People from './people'
-import Add from './add'
-
 import './people.css'
 import TimFerris from '../images/t.ferriss.jpg'
 import QuincyLarson from '../images/q.larson.png'
@@ -11,52 +8,46 @@ import KevinRose from '../images/k.rose.jpg'
 import DanAbramov from '../images/d.abramov.jpg'
 import BrianDouglas from '../images/b.douglas.jpeg'
 
-const people = [
-  style => <People style={{ ...style }} src={TimFerris} />,
-  style => <People style={{ ...style }} src={QuincyLarson} />,
-  style => <People style={{ ...style }} src={BrianDouglas} />,
-  style => <People style={{ ...style }} src={KevinRose} />,
-  style => <People style={{ ...style }} src={DanAbramov} />
-]
 export default class PeopleList extends React.Component {
   constructor() {
     super()
-    this.state = { index: 0 }
-    this.onScroll = this.onScroll.bind(this)
-    this.ref = React.createRef()
-  }
-
-  onScroll(e) {
-    const newCenterIndex = Math.floor((e.target.scrollLeft + 133 / 2) / 133)
-    if (
-      this.props.centerPersonIndex !== newCenterIndex &&
-      newCenterIndex <= 4
-    ) {
-      this.props.onPersonChanged(newCenterIndex)
+    this.state = {
+      items: [TimFerris, QuincyLarson, BrianDouglas, KevinRose, DanAbramov],
     }
   }
 
-  toggle = e =>
-  this.setState(state => ({
-    index: state.index === 2 ? 0 : state.index + 1,
-  }))
+  clickHandler = (e, i) => {
+    const { items } = this.state
+    const mid = items.length / 2 | 0
+    const arr = [...items]
+    const index = arr.indexOf(i)
+    const item = arr.splice(index, 1)
+
+    this.setState({ items: [...arr.slice(0, mid), item[0], ...arr.slice(mid)] })
+  }
 
   render() {
-    const { centerPersonIndex } = this.props
-
+    const { items } = this.state
     return (
-      <div className="peopleList" onScroll={this.onScroll} ref={this.ref} onClick={this.toggle}>
+      <div className="peopleList">
         <Transition
           native
-          reset
-          unique
-          items={this.state.index}
-          from={{ opacity: 0, transform: 'translate3d(100%,0,0)' }}
-          enter={{ opacity: 1, transform: 'translate3d(0%,0,0)' }}
-          leave={{ opacity: 0, transform: 'translate3d(-50%,0,0)' }}>
-          {index => people[index]}
+          config={{ ...config.default, precision: 0.01 }}
+          items={this.state.items}
+          from={{ opacity: 0 }}
+          enter={[{ opacity: 1 }]}
+          leave={[{ opacity: 0.5 }]}
+        >
+          {item => props => console.log(item) || (
+            <animated.div
+              style={props}
+              className="person"
+              onClick={e => this.clickHandler(e, item)}
+            >
+              <img src={item} />
+            </animated.div>
+          )}
         </Transition>
-        <Add bringModal={this.props.bringModal} />
       </div>
     )
   }
