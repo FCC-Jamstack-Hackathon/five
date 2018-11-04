@@ -48,7 +48,9 @@ class LoginTest extends Component {
   }
   testHandler = e => {
     e.preventDefault()
-    this.getLambda('Justin', 'GetUser').then((err, res) => console.log(res))
+    this.getLambda({ name: 'Justin' }, 'GetUser')
+      .then((err, res) => console.log(res))
+      .catch(err => console.log(err))
     //
     //   USE IN LAMBDA:
     // const claims = context.clientContext && context.clientContext.user;
