@@ -8,7 +8,6 @@ import netlifyIdentity from 'netlify-identity-widget'
 
 class LoginTest extends Component {
   getLambda(data, functionName) {
-    console.log(process.env.GATSBY_LAMBDA_ENDPOINT)
     axios.post(process.env.GATSBY_LAMBDA_ENDPOINT + functionName, {
       headers: {
         'Content-Type': 'application/json',
@@ -49,7 +48,7 @@ class LoginTest extends Component {
   }
   testHandler = e => {
     e.preventDefault()
-    this.getLambda(null, 'GetUser').then(res => console.log(res))
+    this.getLambda('Justin', 'GetUser').then((err, res) => console.log(res))
     //
     //   USE IN LAMBDA:
     // const claims = context.clientContext && context.clientContext.user;
