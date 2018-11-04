@@ -5,18 +5,11 @@ import PropTypes from 'prop-types'
 
 import Book from '../icons/book'
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 0 20px 0;
-`
-
 const Item = ({ children, url }) => (
-  <Wrapper>
+  <div className="item-container">
     <Book />
     <Link to={url}>{children}</Link>
-  </Wrapper>
+  </div>
 )
 
 Item.propTypes = {
