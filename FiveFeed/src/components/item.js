@@ -2,13 +2,16 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
+import Audio from '../icons/audio'
 import Book from '../icons/book'
 import JS from '../icons/js'
-import Audio from '../icons/audio'
+import ReactIcon from '../icons/react'
 import Tech from '../icons/tech'
 
 const IconPicker = type => {
   switch (type) {
+    case 'react':
+      return <ReactIcon />
     case 'js':
       return <JS />
     case 'book':
