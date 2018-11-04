@@ -7,7 +7,7 @@ import PeopleList from '../components/people-list'
 import ModalWrapper from '../components/modal-wrapper'
 
 function getLambda(data, functionName) {
-  axios.post(process.env.LAMBDA_ENDPOINT + functionName, {
+  axios.post(process.env.GATSBY_LAMBDA_ENDPOINT + functionName, {
     headers: {
       'Content-Type': 'application/json',
     },
