@@ -10,17 +10,17 @@ const second = '#011627'
 
 export default createGlobalStyle`
   @font-face {
-    font-family: "Dank-Mono";
+    font-family: "Dank Mono";
     font-style: normal;
     font-weight: normal;
-    src: local("Dank Mono"), local("Dank-Mono"), url(${DankMonoRegular}) format("woff");
+    src: local("Dank Mono"), url(${DankMonoRegular}) format("woff");
   }
 
   @font-face {
     font-family: "Dank-Mono";
     font-style: italic;
     font-weight: normal;
-    src: local("Dank Mono"), local("Dank-Mono"), url(${DankMonoItalic}) format("woff");
+    src: local("Dank Mono"), url(${DankMonoItalic}) format("woff");
   }
 
   body {
