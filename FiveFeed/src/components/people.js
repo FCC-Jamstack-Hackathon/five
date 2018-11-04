@@ -2,8 +2,26 @@ import React from 'react';
 
 import './people.css';
 
-const People = ({ src }) => (
-  <img src={src} />
-);
+export default class People extends React.Component {
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log('render?', this.props === nextProps);
+  //   return this.props !== nextProps;
+  // }
 
-export default People;
+  render() {
+    const {
+      src,
+      isLast,
+      isCenter,
+    } = this.props;
+
+    const style = {};
+    if (isLast) {
+      style.marginRight = 0;
+    }
+
+    return (
+      <img style={style} alt="abc" src={src} width={isCenter ? 200 : undefined} />
+    )
+  }
+}

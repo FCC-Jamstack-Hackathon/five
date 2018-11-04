@@ -1,4 +1,12 @@
 .peopleList {
   overflow: scroll;
   white-space: nowrap;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  width: 737px;
+  padding: 0 270px;
+}
+
+.peopleList::-webkit-scrollbar {
+  display: none;
 }
