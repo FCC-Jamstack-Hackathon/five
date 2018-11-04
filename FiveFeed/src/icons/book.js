@@ -1,12 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
-
-const Icon = styled.svg`
-  margin-bottom: 20px;
-`
 
 export default () => (
-  <Icon width="45px" height="45px" viewBox="0 0 45 45">
+  <svg className="svg-icon" width="45px" height="45px" viewBox="0 0 45 45">
     <g
       id="Welcome"
       stroke="none"
@@ -106,5 +101,5 @@ export default () => (
         </g>
       </g>
     </g>
-  </Icon>
+  </svg>
 )
