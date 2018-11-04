@@ -10,11 +10,11 @@ const q = faunadb.query
 exports.handler = async function(event, context, callback) {
   let data = JSON.parse(event.body)
   data = JSON.parse(data.body)
-  console.log(data, 'this is the console log')
+  console.log(process.env.GATSBY_FAUNA_KEY, 'this is the console log')
   const client = new faunadb.Client({ secret: process.env.GATSBY_FAUNA_KEY })
   client
     .query(
-      q.Get(q.Match(q.Index('posts_by_title'), data)).then(res => {
+      q.Get(q.Match(q.Index('posts_by_title'), data.data.name)).then(res => {
         console.log(res)
         let response = {
           statusCode,
