@@ -1,7 +1,8 @@
 import React from 'react';
 
-import './people-list.css';
-import People from './People';
+import './people.css';
+import People from './people';
+import Add from './add';
 
 export default class PeopleList extends React.Component {
   constructor() {
@@ -10,15 +11,10 @@ export default class PeopleList extends React.Component {
     this.onScroll = this.onScroll.bind(this);
     this.ref = React.createRef();
   }
-
-  componentDidMount() {
-    // Set initial scroll position
-    console.log(this.ref.current);
-  }
   
   onScroll(e) {
     const newCenterIndex = Math.floor((e.target.scrollLeft + 133 / 2) / 133);
-    if (this.props.centerPersonIndex !== newCenterIndex) {
+    if (this.props.centerPersonIndex !== newCenterIndex && newCenterIndex <= 14) {
       this.props.onPersonChanged(newCenterIndex);
     }
   }
@@ -43,6 +39,7 @@ export default class PeopleList extends React.Component {
         <People src="https://randomuser.me/api/portraits/women/4.jpg" isCenter={centerPersonIndex === 12} />
         <People src="https://randomuser.me/api/portraits/women/81.jpg" isCenter={centerPersonIndex === 13} />
         <People src="https://randomuser.me/api/portraits/men/62.jpg" isLast={true} isCenter={centerPersonIndex === 14} />
+        <Add bringModal={this.props.bringModal} />
       </div>
     )
   }

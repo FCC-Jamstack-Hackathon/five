@@ -3,11 +3,6 @@ import React from 'react';
 import CollectionItem from './collection-item';
 
 export default class Collection extends React.Component {
-  constructor() {
-    super();
-
-  }
-
   render() {
     return (
       <div>
