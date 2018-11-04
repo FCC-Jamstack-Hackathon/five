@@ -48,6 +48,7 @@ class LoginTest extends Component {
   }
   testHandler = e => {
     e.preventDefault()
+    console.log(process.env.GATSBY_FAUNA_KEY)
     this.getLambda({ name: 'Justin' }, 'GetUser')
       .then((err, res) => console.log(res))
       .catch(err => console.log(err))
