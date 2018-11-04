@@ -3,7 +3,6 @@ import React from 'react'
 import Layout from '../components/layout'
 import Item from '../components/item'
 
-import GlobalStyle from '../shared/globalStyles'
 import PeopleList from '../components/people-list';
 import ModalWrapper from '../components/modal-wrapper';
 
@@ -52,7 +51,7 @@ export default class IndexPage extends React.Component {
         <Item url="/detail/">How to build your own classic 1970s
 Simon flashing light game using JavaScript</Item>
         <Item url="/detail/">A quick introduction to computer networks</Item>
-        <GlobalStyle />
+        {/* <GlobalStyle /> */}
         <ModalWrapper
           isModalOn={this.state.isModalOn}
           hideModal={this.hideModal}

@@ -19,7 +19,6 @@ export default class Add extends React.Component {
         display: 'inline-block',
       }}>
         <img src="https://cdn3.iconfinder.com/data/icons/line/36/add-512.png" width="128" alt="" onClick={this.onClick} />
-        <p>Add new curator</p>
       </div>
 
     )

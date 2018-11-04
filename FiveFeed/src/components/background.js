@@ -157,6 +157,9 @@ const ConfettiGenerator = function(params) {
         ctx.restore()
         break
       }
+      default:  {
+        break;
+      }
     }
   }
 

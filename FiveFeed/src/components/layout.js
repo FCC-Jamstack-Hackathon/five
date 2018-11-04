@@ -6,6 +6,7 @@ import styled from 'styled-components'
 
 import Header from './header'
 import Background from './background'
+import GlobalStyle from '../shared/globalStyles'
 import './layout.css'
 
 const Container = styled.div`
@@ -45,6 +46,7 @@ const Layout = ({ children }) => (
           {children}
         </Container>
         <Background />
+        <GlobalStyle />
       </>
     )}
   />
