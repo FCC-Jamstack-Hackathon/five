@@ -4,8 +4,8 @@ const headers = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'Content-Type',
 }
-// const faunadb = require('faunadb')
-// const q = faunadb.query
+const faunadb = require('faunadb')
+const q = faunadb.query
 
 exports.handler = async function(event, context, callback) {
   let data = JSON.parse(event.body)
