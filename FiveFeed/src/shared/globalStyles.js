@@ -30,7 +30,7 @@ export default createGlobalStyle`
   }
 
   p {
-    color: ${color};
+    color: ${text};
   }
 
   h1 {
