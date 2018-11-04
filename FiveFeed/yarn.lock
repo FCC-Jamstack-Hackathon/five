@@ -4660,6 +4660,14 @@ gatsby-plugin-manifest@^2.0.5:
     bluebird "^3.5.0"
     sharp "^0.21.0"
 
+gatsby-plugin-netlify-identity-widget@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-identity-widget/-/gatsby-plugin-netlify-identity-widget-1.1.1.tgz#06fd3f4f927c07ff6e6d6247047f12ae11995c62"
+  integrity sha512-6uO7UCBduIED7McFlQY3rdS9N5uBCsywVO6abx8RfpVCwEnAdApHPy106oEVmfgeshmVLtfpniWfw2ckif+SXQ==
+  dependencies:
+    babel-runtime "^6.26.0"
+    netlify-identity-widget "^1.4.12"
+
 gatsby-plugin-offline@^2.0.5:
   version "2.0.11"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-2.0.11.tgz#d14a2c9301dc32ab48f51fb92ed01cd4bcf0527c"
@@ -7093,6 +7101,11 @@ netlify-lambda@^1.0.2:
     toml "^2.3.3"
     webpack "^4.17.1"
     webpack-merge "^4.1.4"
+
+netlify-identity-widget@^1.1.2, netlify-identity-widget@^1.4.12:
+  version "1.4.14"
+  resolved "https://registry.yarnpkg.com/netlify-identity-widget/-/netlify-identity-widget-1.4.14.tgz#32539380b85ce98881f3cea2d59111cb031ea994"
+  integrity sha512-F2wAEgfJDjtNcV9vt+GlishUgi2q5IJoeP1VLEZwH9Kq4vUunZByR/2R5Bb6XpCLuiXoT0hNY7zUMCxGBKbl6Q==
 
 next-tick@^1.0.0:
   version "1.0.0"
