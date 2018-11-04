@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import axios from 'axios'
 import FiveList from '../components/five-list'
-import PeopleList from '../components/people-list'
+import PeopleList from '../components/people-list.1'
 import ModalWrapper from '../components/modal-wrapper'
 
 function getLambda(data, endpoint) {
@@ -52,11 +52,11 @@ export default class IndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <PeopleList
+        {/* <PeopleList
           onPersonChanged={this.onPersonChanged}
           centerPersonIndex={this.state.centerPersonIndex}
           bringModal={this.bringModal}
-        />
+        /> */}
         <FiveList />
         <ModalWrapper
           isModalOn={this.state.isModalOn}
