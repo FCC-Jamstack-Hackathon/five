@@ -1,32 +1,25 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
+
+const TitleContainer = styled.div`
+  margin: 0 auto;
+  maxwidth: 960;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  background-color: #011627;
+`
+const Title = styled.h1`
+  color: #addb67;
+  margin: 0;
+`
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+  <div>
+    <TitleContainer>
+      <Title>{siteTitle}</Title>
+    </TitleContainer>
   </div>
 )
 
