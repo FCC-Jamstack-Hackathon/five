@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
+import axios from 'axios'
 
 import { Link } from 'gatsby'
 
