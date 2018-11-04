@@ -13,6 +13,10 @@ const Wrapper = styled.div`
   svg {
     margin-bottom: 20px;
   }
+
+  a {
+    text-align: center;
+  }
 `
 
 export default ({ children, url }) => (
