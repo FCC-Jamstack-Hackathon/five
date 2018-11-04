@@ -5,7 +5,6 @@ import Item from '../components/item'
 
 import GlobalStyle from '../shared/globalStyles'
 import PeopleList from '../components/people-list';
-import Collection from '../components/collection';
 import ModalWrapper from '../components/modal-wrapper';
 
 export default class IndexPage extends React.Component {
@@ -48,7 +47,6 @@ export default class IndexPage extends React.Component {
           centerPersonIndex={this.state.centerPersonIndex}
           bringModal={this.bringModal}
         />
-        <Collection />
         <Item url="/detail/">The Complete JavaScript Handbook </Item>
         <Item url="/detail/">A Software Engineering Survival Guide</Item>
         <Item url="/detail/">How to build your own classic 1970s
