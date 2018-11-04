@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 import DankMonoRegular from '../fonts/dankmono-regular.woff'
 import DankMonoItalic from '../fonts/dankmono-italic.woff'
 
-// const textColor = '#D6DEEB'
+const textColor = '#D6DEEB'
 const first = '#ADDB67'
 const second = '#011627'
 // const third = '#122D42'
@@ -26,5 +26,14 @@ export default createGlobalStyle`
   body {
     color: ${props => (props.dark ? second : first)};
     background-color: ${props => (props.dark ? first : second)};
+  }
+
+  a {
+    color: ${textColor};
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 `
