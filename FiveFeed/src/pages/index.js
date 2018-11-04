@@ -6,19 +6,14 @@ import Image from '../components/image'
 import axios from 'axios'
 
 function getLambda(data, endpoint) {
-  axios.post(
-    location.hostname === 'localhost'
-      ? `http://localhost:9000/${endpoint}`
-      : `${process.env.LAMBDA_ENDPOINT + endpoint}`,
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        data,
-      }),
-    }
-  )
+  axios.post(process.env.LAMBDA_ENDPOINT + endpoint, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      data,
+    }),
+  })
 }
 
 const IndexPage = () => (

@@ -10,7 +10,7 @@ const q = faunadb.query
 exports.handler = async function (event, context, callback) {
   let data = JSON.parse(event.body)
   data = JSON.parse(data.body)
-  const client = new faunadb.Client({ secret: process.env.faunaKey })
+  const client = new faunadb.Client({ secret: process.env.GATSBY_FAUNA_KEY })
   client
     .query(
       q.Update(q.Ref(q.Class('rec'), {
