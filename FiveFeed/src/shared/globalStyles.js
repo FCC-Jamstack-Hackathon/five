@@ -2,7 +2,8 @@ import { createGlobalStyle } from 'styled-components'
 import DankMonoRegular from '../fonts/dankmono-regular.woff'
 import DankMonoItalic from '../fonts/dankmono-italic.woff'
 
-const textColor = '#D6DEEB'
+const link = '#D6DEEB'
+const text = '#9CA2AB'
 const first = '#ADDB67'
 const second = '#011627'
 // const third = '#122D42'
@@ -28,8 +29,16 @@ export default createGlobalStyle`
     background-color: ${props => (props.dark ? first : second)};
   }
 
+  p {
+    color: ${color};
+  }
+
+  h1 {
+    color: ${text};
+  }
+
   a {
-    color: ${textColor};
+    color: ${link};
     text-decoration: none;
   }
 
