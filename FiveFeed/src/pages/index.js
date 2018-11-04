@@ -3,6 +3,18 @@ import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import Image from '../components/image'
+import axios from 'axios'
+
+function getLambda(data, endpoint) {
+  axios.post(process.env.LAMBDA_ENDPOINT + endpoint, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      data,
+    }),
+  })
+}
 
 const IndexPage = () => (
   <Layout>

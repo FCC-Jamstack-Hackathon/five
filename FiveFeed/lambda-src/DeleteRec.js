@@ -7,19 +7,15 @@ const headers = {
 const faunadb = require('faunadb')
 const q = faunadb.query
 
-exports.handler = async function(event, context, callback) {
+exports.handler = async function (event, context, callback) {
   let data = JSON.parse(event.body)
   data = JSON.parse(data.body)
   const client = new faunadb.Client({ secret: process.env.GATSBY_FAUNA_KEY })
   client
     .query(
-      q.Create(q.Class('curator'), {
-        data: {
-          name: data.name,
-          profilePic: data.profilePic,
-          recs: [],
-        },
-      })
+      q.Update(q.Ref(q.Class('rec'), {
+        data: { recs: data.recs },
+      }))
     )
     .then(res => {
       console.log(res)
@@ -33,7 +29,7 @@ exports.handler = async function(event, context, callback) {
     .catch(res => {
       console.log(res)
       let response = {
-        statusCode,
+        statusCode=407,
         headers,
         body: 'failure',
       }
