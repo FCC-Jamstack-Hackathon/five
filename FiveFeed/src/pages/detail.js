@@ -18,7 +18,6 @@ const SecondPage = (props) => console.log(props) || (
       hamburger boudin.
     </p>
     <Link to="/">Go back to the homepage</Link>
-    <GlobalStyle />
   </Layout>
 )
 

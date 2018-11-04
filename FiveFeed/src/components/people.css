@@ -6,7 +6,6 @@
   width: 737px;
   padding: 0 270px;
 }
-
 .peopleList::-webkit-scrollbar {
   display: none;
 }

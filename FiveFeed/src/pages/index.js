@@ -1,14 +1,13 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import Item from '../components/item'
-
-import PeopleList from '../components/people-list';
-import ModalWrapper from '../components/modal-wrapper';
+import FiveList from '../components/five-list'
+import PeopleList from '../components/people-list'
+import ModalWrapper from '../components/modal-wrapper'
 
 export default class IndexPage extends React.Component {
   constructor() {
-    super();
+    super()
 
     this.state = {
       centerPersonIndex: 0,
@@ -46,12 +45,7 @@ export default class IndexPage extends React.Component {
           centerPersonIndex={this.state.centerPersonIndex}
           bringModal={this.bringModal}
         />
-        <Item url="/detail/">The Complete JavaScript Handbook </Item>
-        <Item url="/detail/">A Software Engineering Survival Guide</Item>
-        <Item url="/detail/">How to build your own classic 1970s
-Simon flashing light game using JavaScript</Item>
-        <Item url="/detail/">A quick introduction to computer networks</Item>
-        {/* <GlobalStyle /> */}
+        <FiveList />
         <ModalWrapper
           isModalOn={this.state.isModalOn}
           hideModal={this.hideModal}
