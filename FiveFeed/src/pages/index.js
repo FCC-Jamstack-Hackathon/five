@@ -29,6 +29,7 @@ export default class IndexPage extends React.Component {
     this.onPersonChanged = this.onPersonChanged.bind(this);
     this.hideModal = this.hideModal.bind(this);
     this.bringModal = this.bringModal.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   onPersonChanged(index) {
@@ -49,6 +50,10 @@ export default class IndexPage extends React.Component {
     })
   }
 
+  onClick() {
+    getLambda({}, 'CreateUser');
+  }
+
   render() {
     return (
       <Layout>
@@ -62,6 +67,7 @@ export default class IndexPage extends React.Component {
           isModalOn={this.state.isModalOn}
           hideModal={this.hideModal}
         />
+        <button onClick={this.onClick}>Test REST API</button>
       </Layout>
     )
   }
