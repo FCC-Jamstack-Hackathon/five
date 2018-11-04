@@ -29,12 +29,9 @@ export default createGlobalStyle`
     background-color: ${props => (props.dark ? first : second)};
   }
 
-  p {
+  p, h1 {
     color: ${text};
-  }
-
-  h1 {
-    color: ${text};
+    text-align: center;
   }
 
   a {
