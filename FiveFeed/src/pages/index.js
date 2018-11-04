@@ -1,9 +1,21 @@
 import React from 'react'
 
 import Layout from '../components/layout'
+import axios from 'axios'
 import FiveList from '../components/five-list'
 import PeopleList from '../components/people-list'
 import ModalWrapper from '../components/modal-wrapper'
+
+function getLambda(data, endpoint) {
+  axios.post(process.env.LAMBDA_ENDPOINT + endpoint, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      data,
+    }),
+  })
+}
 
 export default class IndexPage extends React.Component {
   constructor() {
