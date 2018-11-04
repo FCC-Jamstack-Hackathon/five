@@ -7,9 +7,13 @@ import { Link } from 'gatsby'
 import netlifyIdentity from 'netlify-identity-widget'
 
 class LoginTest extends Component {
-  getLambda(data, functionName) {
-    console.log(process.env.GATSBY_LAMBDA_ENDPOINT)
-    axios.post(process.env.GATSBY_LAMBDA_ENDPOINT + functionName, {
+  testHandler = e => {
+    e.preventDefault()
+    this.getLambda(null, 'GetUser')
+  }
+  getLambda = (data, functionName) => {
+    let endpoint = 'http://localhost:9000/' + functionName
+    axios.post(endpoint, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -46,16 +50,6 @@ class LoginTest extends Component {
       //     return callback(null, { statusCode: 401, body: "You must be signed in to call this function" });
       //   }
     })
-  }
-  testHandler = e => {
-    e.preventDefault()
-    this.getLambda(null, 'GetUser').then(res => console.log(res))
-    //
-    //   USE IN LAMBDA:
-    // const claims = context.clientContext && context.clientContext.user;
-    //   if (!claims) {
-    //     return callback(null, { statusCode: 401, body: "You must be signed in to call this function" });
-    //   }
   }
   render() {
     return (

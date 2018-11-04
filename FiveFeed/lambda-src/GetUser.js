@@ -6,28 +6,20 @@ const headers = {
 }
 const faunadb = require('faunadb')
 const q = faunadb.query
+const client = new faunadb.Client({
+  secret: process.env.GATSBY_FAUNA_KEY,
+})
 
 exports.handler = async function(event, context, callback) {
-  const client = new faunadb.Client({ secret: process.env.GATSBY_FAUNA_KEY })
-  client
-    .query(Get(Class(Value('user'))))
-    .get()
-    .then(res => {
-      console.log(res)
-      let response = {
-        statusCode,
-        headers,
-        body: JSON.stringify(res),
-      }
-      callback(null, response)
-    })
-    .catch(res => {
-      console.log(res)
-      let response = {
-        statusCode,
-        headers,
-        body: 'failure',
-      }
-      callback(null, response)
-    })
+  // const data = await client.query(
+  //   q.Get(q.Ref(q.Class('user'), '215067775483249154'))
+  // )
+  const data = 'hey'
+  console.log(data)
+  let response = {
+    statusCode,
+    headers,
+    body: JSON.stringify(data),
+  }
+  callback(null, response)
 }
