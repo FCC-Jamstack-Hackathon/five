@@ -37,6 +37,7 @@ export default createGlobalStyle`
   a {
     color: ${link};
     text-decoration: none;
+    text-align: center;
   }
 
   a:hover {

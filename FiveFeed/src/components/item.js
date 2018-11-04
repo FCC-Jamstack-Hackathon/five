@@ -10,14 +10,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 10px 0 20px 0;
-
-  svg {
-    margin-bottom: 20px;
-  }
-
-  a {
-    text-align: center;
-  }
 `
 
 const Item = ({ children, url }) => (
