@@ -5,8 +5,8 @@ import Layout from '../components/layout'
 import Image from '../components/image'
 import axios from 'axios'
 
-function getLambda(data, endpoint) {
-  axios.post(process.env.LAMBDA_ENDPOINT + endpoint, {
+function getLambda(data, functionName) {
+  axios.post(process.env.LAMBDA_ENDPOINT + functionName, {
     headers: {
       'Content-Type': 'application/json',
     },
