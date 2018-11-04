@@ -16,5 +16,6 @@ export default () => (
     <Item type="book" url="/detail/">How to build your own classic 1970s
 Simon flashing light game using JavaScript</Item>
     <Item type="tech" url="/detail/">A quick introduction to computer networks</Item>
+    <Item type="react" url="/detail/">4 Examples of the useState Hook</Item>
   </Container>
 )

@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import axios from 'axios'
 import FiveList from '../components/five-list'
-import PeopleList from '../components/people-list'
+import PeopleList from '../components/people-list.1'
 import ModalWrapper from '../components/modal-wrapper'
 
 function getLambda(data, functionName) {
