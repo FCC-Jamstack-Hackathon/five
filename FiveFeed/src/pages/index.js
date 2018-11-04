@@ -2,6 +2,7 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import Item from '../components/item'
+
 import GlobalStyle from '../shared/globalStyles'
 
 const IndexPage = () => (
@@ -12,6 +13,7 @@ const IndexPage = () => (
 Simon flashing light game using JavaScript</Item>
     <Item url="/detail/">A quick introduction to computer networks</Item>
     <GlobalStyle />
+
   </Layout>
 )
 
