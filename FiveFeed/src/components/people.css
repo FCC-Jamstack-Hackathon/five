@@ -16,7 +16,7 @@
   justify-self: center;
   width: 40px;
   animation-name: test;
-  transition: all 1s linear;
+  transition: all 500ms linear;
 }
 @media (min-width: 768px) {
   .peopleList {

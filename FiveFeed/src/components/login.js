@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
 import netlifyIdentity from 'netlify-identity-widget'
 
 import User from '../icons/user'

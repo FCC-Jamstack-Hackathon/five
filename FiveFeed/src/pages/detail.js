@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import ProfilePhoto from '../components/profile'
-import GlobalStyle from '../shared/globalStyles'
 
 const SecondPage = (props) => console.log(props) || (
   <Layout>
