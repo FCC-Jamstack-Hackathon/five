@@ -1,25 +1,38 @@
 import React, { Component } from 'react'
 import netlifyIdentity from 'netlify-identity-widget'
 
-class Login extends Component {
-  constructor() {
-    super()
+import User from '../icons/user'
 
-    this.handleLogIn = this.handleLogIn.bind(this)
+export default class Login extends Component {
+  generateHeaders() {
+    const headers = { 'Content-Type': 'application/json' }
+    if (netlifyIdentity.currentUser()) {
+      return netlifyIdentity
+        .currentUser()
+        .jwt()
+        .then(token => {
+          return { ...headers, Authorization: `Bearer ${token}` }
+        })
+    }
+    return Promise.resolve(headers)
   }
 
-  handleLogIn() {
-    // You can import the widget into any component and interact with it.
+  clickHandler = e => {
+    e.preventDefault()
     netlifyIdentity.open()
+    netlifyIdentity.on('login', user => console.log('login', user))
+    // store token in localstorage
+    this.generateHeaders().then(headers => {
+      // GET request
+      //
+      //   USE IN LAMBDA:
+      // const claims = context.clientContext && context.clientContext.user;
+      //   if (!claims) {
+      //     return callback(null, { statusCode: 401, body: "You must be signed in to call this function" });
+      //   }
+    })
   }
-
   render() {
-    return (
-      <>
-        <button onClick={this.handleLogIn}>Log in with netlify</button>
-      </>
-    )
+    return <button className="login-button" onClick={this.clickHandler}><User /></button>
   }
 }
-
-export default Login

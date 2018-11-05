@@ -6,34 +6,20 @@ const headers = {
 }
 const faunadb = require('faunadb')
 const q = faunadb.query
+const client = new faunadb.Client({
+  secret: process.env.GATSBY_FAUNA_KEY,
+})
 
 exports.handler = async function(event, context, callback) {
-  let data = JSON.parse(event.body)
-  data = JSON.parse(data.body)
-  const client = new faunadb.Client({
-    secret: `${process.env.GATSBY_FAUNA_KEY}`,
-  })
-  console.log(client, process.env.GATSBY_FAUNA_KEY)
-  //   client
-  //     .query(
-  //       q.Get(q.Match(q.Index('posts_by_title'), data.data.name)).then(res => {
-  //         console.log(res)
-  //         let response = {
-  //           statusCode,
-  //           headers,
-  //           body: JSON.stringify(res),
-  //         }
-  //         callback(null, response)
-  //       })
-  //     )
-  //     .catch(res => {
-  //       console.log(res)
-  //       let response = {
-  //         statusCode,
-  //         headers,
-  //         body: 'failure',
-  //       }
-  //       callback(null, response)
-  //     })
-  callback(null, 'hi')
+  // const data = await client.query(
+  //   q.Get(q.Ref(q.Class('user'), '215067775483249154'))
+  // )
+  const data = 'hey'
+  console.log(data)
+  let response = {
+    statusCode,
+    headers,
+    body: JSON.stringify(data),
+  }
+  callback(null, response)
 }
