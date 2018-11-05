@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import Item from './item'
@@ -9,12 +10,12 @@ const Container = styled.div`
   align-items: center;
 `
 
-export default () => (
+const FiveList = ({ recs }) => (
   <Container>
-    <Item type="book" url="/detail/">Paul Singer, Doomsday Investor </Item>
-    <Item type="audio" url="/detail/">Won't You Be My Neighbor?</Item>
-    <Item type="tech" url="/detail/">Corkcicle Whiskey Wedge</Item>
-    <Item type="tech" url="/detail/">C.L. Butaud’s 100% Texas tempranillo</Item>
-    <Item type="book" url="/detail/">Athletic Greens</Item>
+    {recs.map(({ link, title, type }) => <Item key={title} type={type} url={link}>{title}</Item>)}
   </Container>
 )
+
+FiveList.propTypes = { recs: PropTypes.array.isRequired }
+
+export default FiveList
