@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "axios": "^0.18.0",
     "faunadb": "^2.5.2",
     "gatsby": "^2.0.19",
     "gatsby-image": "^2.0.15",
@@ -18,7 +19,8 @@
     "netlify-lambda": "^1.0.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "styled-components": "^4.0.3"
   },
   "keywords": [
     "gatsby"
@@ -28,6 +30,8 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
+    "build:lambda": "netlify-lambda build lambda-src",
+    "lambda-serve": "netlify-lambda serve lambda-src",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

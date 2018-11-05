@@ -7,18 +7,14 @@
 // const faunadb = require('faunadb')
 // const q = faunadb.query
 
-// exports.handler = async function(event, context, callback) {
+// exports.handler = async function (event, context, callback) {
 //   let data = JSON.parse(event.body)
 //   data = JSON.parse(data.body)
 //   const client = new faunadb.Client({ secret: process.env.GATSBY_FAUNA_KEY })
 //   client
 //     .query(
-//       q.Create(q.Class('curator'), {
-//         data: {
-//           name: data.name,
-//           profilePic: data.profilePic,
-//           recs: [],
-//         },
+//       q.Update(q.Class('rec'), {
+//         data: { recs: data.recs },
 //       })
 //     )
 //     .then(res => {
@@ -33,10 +29,22 @@
 //     .catch(res => {
 //       console.log(res)
 //       let response = {
-//         statusCode,
+//         statusCode=407,
 //         headers,
 //         body: 'failure',
 //       }
 //       callback(null, response)
 //     })
 // }
+
+// client.query(
+//   q.CreateFunction({
+//     name: "create_post",
+//     body: q.Query(
+//       q.Lambda(
+//         ["title", "body"],
+//         q.Create(q.Class("posts"), { data: { title: q.Var("title"), body: q.Var("body") } }))),
+//     permissions: { call: "public" },
+//     role: "server"
+//   }))
+//   .then((ret) => console.log(ret))

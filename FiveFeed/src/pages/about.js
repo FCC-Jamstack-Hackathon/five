@@ -51,6 +51,7 @@ const Textarea = styled.textarea`
   width: 100%;
   border: 2px solid rgb(173, 219, 103);
   border-radius: 5px;
+  margin-bottom: 15px;
 `
 const Submit = styled.button`
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;

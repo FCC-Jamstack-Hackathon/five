@@ -1,19 +1,69 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
-import Image from '../components/image'
+import axios from 'axios'
+import FiveList from '../components/five-list'
+import PeopleList from '../components/people-list'
+import ModalWrapper from '../components/modal-wrapper'
 
-const IndexPage = () => (
-  <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+function getLambda(data, functionName) {
+  axios.post(process.env.LAMBDA_ENDPOINT + functionName, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      data,
+    }),
+  })
+}
 
-export default IndexPage
+export default class IndexPage extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      centerPersonIndex: 0,
+      isModalOn: false,
+    }
+
+    this.onPersonChanged = this.onPersonChanged.bind(this);
+    this.hideModal = this.hideModal.bind(this);
+    this.bringModal = this.bringModal.bind(this);
+  }
+
+  onPersonChanged(index) {
+    this.setState({
+      centerPersonIndex: index,
+    })
+  }
+
+  hideModal() {
+    this.setState({
+      isModalOn: false,
+    })
+  }
+
+  bringModal() {
+    this.setState({
+      isModalOn: true,
+    })
+  }
+
+  render() {
+    return (
+      <Layout>
+        <PeopleList
+          onPersonChanged={this.onPersonChanged}
+          centerPersonIndex={this.state.centerPersonIndex}
+          bringModal={this.bringModal}
+        />
+        <FiveList />
+        <ModalWrapper
+          isModalOn={this.state.isModalOn}
+          hideModal={this.hideModal}
+        />
+      </Layout>
+    )
+  }
+}
+

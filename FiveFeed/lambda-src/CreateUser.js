@@ -13,11 +13,10 @@
 //   const client = new faunadb.Client({ secret: process.env.GATSBY_FAUNA_KEY })
 //   client
 //     .query(
-//       q.Create(q.Class('curator'), {
+//       q.Create(q.Class('user'), {
 //         data: {
 //           name: data.name,
-//           profilePic: data.profilePic,
-//           recs: [],
+//           curators: [],
 //         },
 //       })
 //     )
