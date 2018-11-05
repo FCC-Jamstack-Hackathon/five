@@ -13,21 +13,18 @@ export default class PeopleList extends React.Component {
     super()
     this.state = {
       items: [TimFerris, QuincyLarson, BrianDouglas, KevinRose, DanAbramov],
+      selected: false,
+      selectedIndex: 0,
     }
   }
 
   clickHandler = (e, i) => {
-    const { items } = this.state
-    const mid = items.length / 2 | 0
-    const arr = [...items]
-    const index = arr.indexOf(i)
-    const item = arr.splice(index, 1)
-
-    this.setState({ items: [...arr.slice(0, mid), item[0], ...arr.slice(mid)] })
+    this.setState({ selected: !this.state.selected, selectedIndex: this.state.items.indexOf(i) })
   }
 
   render() {
-    const { items } = this.state
+    const { items, selected } = this.state;
+    console.log(this.state);
     return (
       <div className="peopleList">
         <Transition
@@ -38,10 +35,10 @@ export default class PeopleList extends React.Component {
           enter={[{ opacity: 1 }]}
           leave={[{ opacity: 0.5 }]}
         >
-          {item => props => console.log(item) || (
+          {item => props => (
             <animated.div
               style={props}
-              className="person"
+              className={this.state.items.indexOf(item) === this.state.selectedIndex ? 'person__selected person' : 'person'}
               onClick={e => this.clickHandler(e, item)}
             >
               <img src={item} />
