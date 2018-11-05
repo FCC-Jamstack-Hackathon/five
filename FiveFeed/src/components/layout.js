@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import Header from './header'
+import Footer from './footer'
 import Background from './background'
 import GlobalStyle from '../shared/globalStyles'
 import './layout.css'
@@ -45,6 +46,7 @@ const Layout = ({ children }) => (
         <Container>
           {children}
         </Container>
+        <Footer />
         <Background />
         <GlobalStyle />
       </>

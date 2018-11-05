@@ -12,11 +12,19 @@ const Title = styled.div`
     font-size: 1.5rem;
   }
 `
+
 const Images = styled.div`
-  display: flex;
-  width: 737px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   margin: auto;
+
+  @media (min-width: 768px) {
+    & {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
 `
+
 const ImageWrapper = styled.div`
   display: flex
   flex-direction: column;
@@ -36,12 +44,13 @@ const Form = styled.form`
   max-width: 420px;
   margin: 50px auto;
 `
+
 const Input = styled.input`
   border-radius: 5px;
   line-height: 22px;
   background-color: transparent;
-  border: 2px solid #addb67;
-  color: #addb67;
+  border: 2px solid #ADDB67;
+  color: #9CA2AB;
   transition: all 0.3s;
   padding: 13px;
   margin-bottom: 15px;
@@ -49,21 +58,23 @@ const Input = styled.input`
   box-sizing: border-box;
   outline: 0;
 `
+
 const Textarea = styled.textarea`
   height: 150px;
   line-height: 150%;
   resize: vertical;
   width: 100%;
   background-color: transparent;
-  border: 2px solid #addb67;
-  color: #addb67;
+  border: 2px solid #ADDB67;
+  color: #9CA2AB;
   border-radius: 5px;
   margin-bottom: 15px;
   padding: 13px;
 `
+
 const Submit = styled.button`
   width: 100%;
-  background: #addb67;
+  background: #ADDB67;
   border-radius: 5px;
   border: 0;
   cursor: pointer;
@@ -75,7 +86,7 @@ const Submit = styled.button`
   margin-top: -4px;
   font-weight: 700;
   &:hover {
-    background: #cc6666;
+    background: #CC6666;
   }
 `
 export default () => (

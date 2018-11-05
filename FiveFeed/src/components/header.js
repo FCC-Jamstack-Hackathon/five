@@ -6,15 +6,16 @@ import styled from 'styled-components'
 import LoginButton from './login'
 
 const Container = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 75% 1fr;
   margin: 0 auto;
   maxwidth: 960;
   padding: 1rem 0.5rem 0.75rem 0.5rem;
-  display: grid;
-  grid-template-columns: 1fr 75% 1fr;
   justify-content: center;
 
   @media (min-width: 768px) {
     & {
+      grid-template-columns: 1fr 1fr 50% 1fr 1fr;
       padding: 2rem 1rem 1rem 1rem;
     }
   }
@@ -23,6 +24,10 @@ const Title = styled.h1`
   grid-column-start: 2;
   margin: 0;
   text-align: center;
+
+  @media (min-width: 768px) {
+    grid-column-start: 3;
+  }
   `
 const StyledLink = styled(Link)`
   color: #addb67;

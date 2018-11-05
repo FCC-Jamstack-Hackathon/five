@@ -28,8 +28,6 @@ export default class IndexPage extends Component {
     this.setState({ curators })
   }
 
-  onPersonChanged = (selectedIndex) => this.setState({ selectedIndex })
-
   currentCurator = () => {
     const { curators, selectedIndex } = this.state
     const current = curators.find((_, i) => i === selectedIndex)
