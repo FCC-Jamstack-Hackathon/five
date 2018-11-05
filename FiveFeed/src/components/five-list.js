@@ -11,10 +11,10 @@ const Container = styled.div`
 
 export default () => (
   <Container>
-    <Item type="js" url="/detail/">The Complete JavaScript Handbook </Item>
-    <Item type="audio" url="/detail/">A Software Engineering Survival Guide</Item>
-    <Item type="book" url="/detail/">How to build your own classic 1970s
-Simon flashing light game using JavaScript</Item>
-    <Item type="tech" url="/detail/">A quick introduction to computer networks</Item>
+    <Item type="book" url="/detail/">Paul Singer, Doomsday Investor </Item>
+    <Item type="audio" url="/detail/">Won't You Be My Neighbor?</Item>
+    <Item type="tech" url="/detail/">Corkcicle Whiskey Wedge</Item>
+    <Item type="tech" url="/detail/">C.L. Butaud’s 100% Texas tempranillo</Item>
+    <Item type="book" url="/detail/">Athletic Greens</Item>
   </Container>
 )
