@@ -2,11 +2,9 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
-import ProfilePhoto from '../components/profile'
 
 const SecondPage = (props) => console.log(props) || (
   <Layout>
-    <ProfilePhoto />
     <h1>Jane Doe</h1>
     <p>
       Bacon ipsum dolor amet picanha landjaeger frankfurter pork chop,

@@ -1,7 +1,7 @@
 .peopleList {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  overflow: scroll;
+  overflow: none;
   white-space: nowrap;
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
@@ -16,7 +16,7 @@
   justify-self: center;
   width: 40px;
   animation-name: test;
-  transition: all 500ms linear;
+  transition: all 100ms linear;
 }
 @media (min-width: 768px) {
   .peopleList {
@@ -27,9 +27,12 @@
   }
 }
 .person__selected {
-  transform: scale(1.25);
+  transform: scale(1.35);
 }
 img {
   margin: 0;
   border-radius: 50%;
+}
+.person__selected img {
+  border: 1px solid #ADDB67;
 }
