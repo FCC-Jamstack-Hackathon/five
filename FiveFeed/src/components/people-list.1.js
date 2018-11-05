@@ -19,12 +19,16 @@ export default class PeopleList extends React.Component {
   }
 
   clickHandler = (e, i) => {
-    this.setState({ selected: !this.state.selected, selectedIndex: this.state.items.indexOf(i) })
+    this.setState({
+      selected: !this.state.selected,
+      selectedIndex: this.state.items.indexOf(i),
+    })
+    this.props.onPersonChanged(this.state.items.indexOf(i))
   }
 
   render() {
-    const { items, selected } = this.state;
-    console.log(this.state);
+    const { items, selected } = this.state
+    console.log(this.state)
     return (
       <div className="peopleList">
         <Transition
@@ -38,7 +42,11 @@ export default class PeopleList extends React.Component {
           {item => props => (
             <animated.div
               style={props}
-              className={this.state.items.indexOf(item) === this.state.selectedIndex ? 'person__selected person' : 'person'}
+              className={
+                this.state.items.indexOf(item) === this.state.selectedIndex
+                  ? 'person__selected person'
+                  : 'person'
+              }
               onClick={e => this.clickHandler(e, item)}
             >
               <img src={item} />
