@@ -1,75 +1,56 @@
-import React from 'react'
-// import axios from 'axios'
+import React, { Component } from 'react'
 
 import Layout from '../components/layout'
 import FiveList from '../components/five-list'
-import FiveList2 from '../components/five-list2'
-import FiveList3 from '../components/five-list3'
 import PeopleList from '../components/people-list'
-import ModalWrapper from '../components/modal-wrapper'
 
-// function getLambda(data, functionName) {
-//   axios.post(process.env.LAMBDA_ENDPOINT + functionName, {
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify({
-//       data,
-//     }),
-//   })
-// }
+import data from '../shared/dummyData'
+import { DanAbramov, KevinRose, QuincyLarson, TimFerris, VeniKunche } from '../images'
 
-export default class IndexPage extends React.Component {
+export default class IndexPage extends Component {
   constructor() {
     super()
-
     this.state = {
-      centerPersonIndex: 0,
-      isModalOn: false,
+      selectedIndex: 2,
+      items: [
+        TimFerris,
+        QuincyLarson,
+        KevinRose,
+        VeniKunche,
+        DanAbramov,
+      ],
+      curators: []
     }
-
-    this.onPersonChanged = this.onPersonChanged.bind(this)
-    this.hideModal = this.hideModal.bind(this)
-    this.bringModal = this.bringModal.bind(this)
   }
 
-  onPersonChanged(index) {
-    this.setState({
-      centerPersonIndex: index,
-    })
+  componentDidMount() {
+    const curators = Object.keys(data).reduce((arr, curator) => arr.push(data[curator]) && arr, [])
+    this.setState({ curators })
   }
 
-  hideModal() {
-    this.setState({
-      isModalOn: false,
-    })
+  onPersonChanged = (selectedIndex) => this.setState({ selectedIndex })
+
+  currentCurator = () => {
+    const { curators, selectedIndex } = this.state
+    const current = curators.find((_, i) => i === selectedIndex)
+    if (current) {
+      const { name, recs }= current
+      return <FiveList key={name} recs={recs} />
+    }
+    return <div></div>
   }
 
-  bringModal() {
-    this.setState({
-      isModalOn: true,
-    })
+  clickHandler = (_, i) => {
+    const selectedIndex = this.state.items.indexOf(i)
+    this.setState({ selectedIndex })
   }
 
   render() {
+    const { items, selectedIndex } = this.state
     return (
       <Layout>
-        <PeopleList
-          onPersonChanged={this.onPersonChanged}
-        />
-        {this.state.centerPersonIndex === 0 ? (
-          <FiveList />
-        ) : this.state.centerPersonIndex === 1 ? (
-          <FiveList2 />
-        ) : this.state.centerPersonIndex === 2 ? (
-          <FiveList3 />
-        ) : (
-          <FiveList />
-        )}
-        <ModalWrapper
-          isModalOn={this.state.isModalOn}
-          hideModal={this.hideModal}
-        />
+        <PeopleList items={items} selectedIndex={selectedIndex} clickHandler={this.clickHandler} />
+        {this.currentCurator()}
       </Layout>
     )
   }
