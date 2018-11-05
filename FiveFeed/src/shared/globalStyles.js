@@ -18,7 +18,7 @@ export default createGlobalStyle`
   }
 
   @font-face {
-    font-family: "Dank-Mono";
+    font-family: "Dank Mono";
     font-style: italic;
     font-weight: normal;
     src: local("Dank Mono"), url(${DankMonoItalic}) format("woff");
