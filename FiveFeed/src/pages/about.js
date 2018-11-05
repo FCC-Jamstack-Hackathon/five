@@ -1,13 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Container = styled.div`
-  margin: 0 auto;
-`
+import Layout from '../components/layout'
+
+
 const Title = styled.div`
   margin: auto;
   display: flex;
   justify-content: center;
+  h1 {
+    font-size: 1.5rem;
+  }
 `
 const Images = styled.div`
   display: flex;
@@ -19,6 +22,10 @@ const ImageWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 5px;
+  div {
+    margin-top: 20px;
+    color: #9CA2AB;
+  }
 `
 
 const Img = styled.img`
@@ -30,13 +37,11 @@ const Form = styled.form`
   margin: 50px auto;
 `
 const Input = styled.input`
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 18px;
   border-radius: 5px;
   line-height: 22px;
   background-color: transparent;
-  border: 2px solid rgb(173, 219, 103);
+  border: 2px solid #addb67;
+  color: #addb67;
   transition: all 0.3s;
   padding: 13px;
   margin-bottom: 15px;
@@ -49,14 +54,16 @@ const Textarea = styled.textarea`
   line-height: 150%;
   resize: vertical;
   width: 100%;
-  border: 2px solid rgb(173, 219, 103);
+  background-color: transparent;
+  border: 2px solid #addb67;
+  color: #addb67;
   border-radius: 5px;
   margin-bottom: 15px;
+  padding: 13px;
 `
 const Submit = styled.button`
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   width: 100%;
-  background: rgb(173, 219, 103);
+  background: #addb67;
   border-radius: 5px;
   border: 0;
   cursor: pointer;
@@ -71,35 +78,47 @@ const Submit = styled.button`
     background: #cc6666;
   }
 `
-const SecondPage = () => (
-  <Container>
+export default () => (
+  <Layout>
     <Title>
       <h1>Meet the team</h1>
     </Title>
     <Images>
       <ImageWrapper>
         <Img src="https://avatars0.githubusercontent.com/u/2607929?s=400&v=4" />
-        <div>Frank</div>
+        <div>
+          <a href="http://github.com/frankfaustino">Frank</a>
+        </div>
       </ImageWrapper>
       <ImageWrapper>
         <Img src="https://avatars1.githubusercontent.com/u/1832557?s=400&v=4" />
-        <div>Kohei</div>
+        <div>
+          <a href="http://github.com/1kohei1">Kohei</a>
+        </div>
       </ImageWrapper>
       <ImageWrapper>
         <Img src="https://avatars0.githubusercontent.com/u/28818476?s=400&v=4" />
-        <div>Justin</div>
+        <div>
+          <a href="http://github.com/jkasem">Justin</a>
+        </div>
       </ImageWrapper>
       <ImageWrapper>
         <Img src="https://avatars1.githubusercontent.com/u/6034810?s=400&v=4" />
-        <div>Hunter</div>
+        <div>
+          <a href="http://github.com/spacexengineer">Hunter</a>
+        </div>
       </ImageWrapper>
       <ImageWrapper>
         <Img src="https://pbs.twimg.com/profile_images/793136164379193344/uBl63U29_400x400.jpg" />
-        <div>Niki</div>
+        <div>
+          <a href="http://github.com/nesfandiari">Niki</a>
+        </div>
       </ImageWrapper>
       <ImageWrapper>
         <Img src="https://avatars1.githubusercontent.com/u/26584764?s=400&v=4" />
-        <div>Sumayyah</div>
+        <div>
+          <a href="http://github.com/sumi419">Sumayyah</a>
+        </div>
       </ImageWrapper>
     </Images>
     <div style={{ textAlign: 'center' }}>
@@ -109,11 +128,9 @@ const SecondPage = () => (
       >
         <Input type="text" name="name" placeholder="Name" />
         <Input type="email" name="_replyto" placeholder="Your email" />
-        <Textarea name="message" placeholder="Send us feedback! 💚" />
+        <Textarea name="message" placeholder="Send us feedback!" />
         <Submit type="submit">Submit</Submit>
       </Form>
     </div>
-  </Container>
+  </Layout>
 )
-
-export default SecondPage
