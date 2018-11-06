@@ -10,13 +10,13 @@ const Container = styled.div`
   grid-template-columns: 1fr 75% 1fr;
   margin: 0 auto;
   maxwidth: 960;
-  padding: 1rem 0.5rem 0.75rem 0.5rem;
+  padding: 0.75rem 0.5rem 0.5rem 0.5rem;
   justify-content: center;
 
   @media (min-width: 768px) {
     & {
       grid-template-columns: 1fr 1fr 50% 1fr 1fr;
-      padding: 2rem 1rem 1rem 1rem;
+      padding: 1.5rem 1rem 0 1rem;
     }
   }
 `
@@ -28,7 +28,7 @@ const Title = styled.h1`
   @media (min-width: 768px) {
     grid-column-start: 3;
   }
-  `
+`
 const StyledLink = styled(Link)`
   color: #addb67;
 `

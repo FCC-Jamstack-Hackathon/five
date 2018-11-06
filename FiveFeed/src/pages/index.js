@@ -32,13 +32,13 @@ export default class IndexPage extends Component {
     const { curators, selectedIndex } = this.state
     const current = curators.find((_, i) => i === selectedIndex)
     if (current) {
-      const { name, recs }= current
+      const { name, recs } = current
       return <FiveList key={name} recs={recs} />
     }
-    return <div></div>
+    return
   }
 
-  clickHandler = (_, i) => {
+  clickHandler = (i) => {
     const selectedIndex = this.state.items.indexOf(i)
     this.setState({ selectedIndex })
   }

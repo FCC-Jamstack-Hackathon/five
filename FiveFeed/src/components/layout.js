@@ -19,7 +19,6 @@ const Container = styled.div`
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 10px;
 `
-
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`

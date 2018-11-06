@@ -35,27 +35,27 @@
     "profilePic": "https://pbs.twimg.com/profile_images/378800000147359764/54dc9a5c34e912f34db8662d53d16a39_400x400.png",
     "recs": [
       {
+        "title": "Simon JavaScript Game Tutorial",
+        "link": "https://www.freecodecamp.org/n/s1M0ntu70",
+        "type": "js"
+      },
+      {
+        "title": "A Software Engineering Survival Guide",
+        "link": "https://medium.freecodecamp.org/fe3eafb47166",
+        "type": "article"
+      },
+      {
+        "title": "Introduction to Computer Networks",
+        "link": "https://www.freecodecamp.org/n/n3tW0rk88",
+        "type": "article"
+      },
+      {
         "title": "The Complete JavaScript Handbook",
         "link": "https://medium.freecodecamp.org/f26b2c71719c",
         "type": "js"
       },
       {
-        "title": "How to build your own classic 1970s Simon flashing light",
-        "link": "https://www.freecodecamp.org/n/s1M0ntu70",
-        "type": "js"
-      },
-      {
-        "title": "A software Engineering Survival Guide",
-        "link": "https://medium.freecodecamp.org/fe3eafb47166",
-        "type": "article"
-      },
-      {
-        "title": "A quick introduction to computer networks",
-        "link": "https://www.freecodecamp.org/n/n3tW0rk88",
-        "type": "article"
-      },
-      {
-        "title": "Podcast #51: Erica Peterson founded Moms Can Code",
+        "title": "Podcast #51: Erica Peterson",
         "link": "https://www.freecodecamp.org/n/jdigPOM2d",
         "type": "audio"
       }
@@ -65,17 +65,12 @@
     "name": "Kevin Rose'",
     "recs": [
       {
-        "title": "KRS #25: Talking psychedelics with Michael Pollan",
-        "link": "https://www.kevinrose.com/single-post/Michael-Pollan",
-        "type": "audio"
-      },
-      {
         "title": "The Random Show (Summer Edition)",
         "link": "https://www.kevinrose.com/single-post/Tim-Ferriss-The-Random-Show-Summer-2018",
         "type": "audio"
       },
       {
-        "title": "I teach you Wim Hof's (the ice man) powerful breathing exercise",
+        "title": "Wim Hof's powerful breathing exercise",
         "link": "https://www.instagram.com/tv/BnKRdXPnbnD/?utm_source=ig_share_sheet&igshid=41h4ggquln9y",
         "type": "instagram"
       },
@@ -88,6 +83,11 @@
         "title": "Japan's abandoned sculpture garden",
         "link": "https://www.youtube.com/watch?v=QnkgySyGDGY",
         "type": "video"
+      },
+      {
+        "title": "Kevin Rose Show #25: Michael Pollan",
+        "link": "https://www.kevinrose.com/single-post/Michael-Pollan",
+        "type": "audio"
       }
     ]
   },
@@ -95,27 +95,27 @@
     "name": "Veni Kunche",
     "recs": [
       {
-        "title": "Over 100 Women In Tech Shared Their Projects",
+        "title": "100+ Women In Tech Projects",
         "link": "https://twitter.com/i/moments/1047492658619404288",
         "type": "code"
       },
       {
-        "title": "LaBrina Loving, Senior Software Engineer at Microsoft",
+        "title": "LaBrina Loving, SSE at Microsoft",
         "link": "http://blog.codewithveni.com/labrina-loving-senior-software-engineer-microsoft/",
         "type": "article"
       },
       {
-        "title": "Jennifer shared her really great repository of self-care resources for developers",
+        "title": "Self-care resources for developers",
         "link": "http://selfcare.tech/",
         "type": "tech"
       },
       {
-        "title": "Vogue & Code's Culture Kids Sticker Pack",
+        "title": "Vogue & Code's Sticker Pack",
         "link": "https://www.vogueandcode.com/shop/culture-kids-sticker-pack-1",
         "type": "code"
       },
       {
-        "title": "Kelsey Campbell on Becoming a Data Scientist",
+        "title": "Kelsey Campbell 👉 Data Scientist",
         "link": "http://blog.codewithveni.com/kelsey-campbell-data-scientist/",
         "type": "article"
       }
@@ -131,22 +131,22 @@
         "type": "article"
       },
       {
-        "title": "How is react-window different from react-virtualized?",
+        "title": "react-window vs react-virtualized",
         "link": "https://github.com/bvaughn/react-window#how-is-react-window-different-from-react-virtualized",
         "type": "react"
       },
       {
-        "title": "Codesandbox: Like button with React Hooks!",
+        "title": "Like button with React Hooks!",
         "link": "https://codesandbox.io/s/1vqr8qlzo4",
         "type": "code"
       },
       {
-        "title": "Kent C. Dodds: React Hooks and Suspense",
+        "title": "React Hooks and Suspense",
         "link": "https://egghead.io/playlists/react-hooks-and-suspense-650307f2",
         "type": "video"
       },
       {
-        "title": "Codesandbox: Slide Button using useGesture",
+        "title": "Slide Button using useGesture",
         "link": "https://codesandbox.io/embed/387p7vo9z5",
         "type": "code"
       }

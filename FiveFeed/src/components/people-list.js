@@ -21,7 +21,7 @@ const PeopleList = ({ items, clickHandler, selectedIndex }) => (
           className={`person${
             items.indexOf(item) === selectedIndex ? ' person__selected' : ''
           }`}
-          onClick={e => clickHandler(e, item)}
+          onClick={() => clickHandler(item)}
         >
           <img alt="curator" src={item} />
         </animated.div>

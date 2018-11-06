@@ -9,6 +9,9 @@ const Container = styled.div`
   maxwidth: 960;
   padding: 0 0.5rem 1rem 0.5rem;
   color: #9CA2AB;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 
   @media (min-width: 768px) {
     & {
@@ -16,22 +19,15 @@ const Container = styled.div`
     }
   }
 `
-
-const Copyright = styled.span`
-  text-align: center;
-`
-
-const About = styled.span`
+const Span = styled.span`
   text-align: center;
 `
 
 export default () => (
   <Container>
-    <Copyright>
-      © Five 🖐 2018
-    </Copyright>
-    <About>
-      <Link to="/about/">Meet the team! ⚡️</Link>
-    </About>
+    <Span>© Five <span role="img" aria-label="five">🖐</span> 2018</Span>
+    <Span>
+      <Link to="/about/">Meet the team! <span role="img" aria-label="bolt">⚡</span>️</Link>
+    </Span>
   </Container>
 )
