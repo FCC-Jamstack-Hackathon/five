@@ -5,22 +5,26 @@ import styled from 'styled-components'
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 0 auto;
-  maxwidth: 960;
-  padding: 0 0.5rem 1rem 0.5rem;
+  margin: 0 1rem 0 1rem;
+  max-width: 768px;
+  padding: 0.75rem 0 1rem 0;
   color: #9CA2AB;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
+  border-top: 1px solid #32374C;
 
   @media (min-width: 768px) {
     & {
-      padding: 0 1rem 1rem 1rem;
+      margin: 0 auto;
     }
   }
 `
 const Span = styled.span`
-  text-align: center;
+  &:nth-child(1) {
+    text-align: left;
+  }
+
+  &:nth-child(2) {
+    text-align: right;
+  }
 `
 
 export default () => (

@@ -7,27 +7,23 @@ import LoginButton from './login'
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 75% 1fr;
-  margin: 0 auto;
-  maxwidth: 960;
-  padding: 0.75rem 0.5rem 0.5rem 0.5rem;
-  justify-content: center;
+  grid-template-columns: 1fr 26px;
+  margin: 0 1rem 0 1rem;
+  max-width: 768px;
+  padding: 0.75rem 0 1rem 0;
+  border-bottom: 1px solid #32374C;
 
   @media (min-width: 768px) {
     & {
-      grid-template-columns: 1fr 1fr 50% 1fr 1fr;
-      padding: 1.5rem 1rem 0 1rem;
+      margin: 0 auto;
     }
   }
 `
 const Title = styled.h1`
-  grid-column-start: 2;
+  grid-column-start: 1;
   margin: 0;
-  text-align: center;
-
-  @media (min-width: 768px) {
-    grid-column-start: 3;
-  }
+  text-align: left;
+  font-size: 1.5rem;
 `
 const StyledLink = styled(Link)`
   color: #addb67;
